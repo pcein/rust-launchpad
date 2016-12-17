@@ -1,0 +1,12 @@
+arm-none-eabi-gcc -c -mthumb -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -O0 -ffunction-sections -fdata-sections -MD -std=c99 -Wall -pedantic -c -g -I ../tivaware -DPART_LM4F120H5QR -c -DTARGET_IS_BLIZZARD_RA1 startup_gcc.c 
+
+
+# Compile with optimization enabled
+
+rustc -C opt-level=2 -Z no-landing-pads --target thumbv7em-none-eabihf -g --emit obj -L libcore-thumbv7m -L librustc_bitflags-thumbv7m -o blinky.o blinky.rs
+
+arm-none-eabi-ld -T blinky.ld --gc-sections -o blinky.axf startup_gcc.o blinky.o ../tivaware/driverlib/gcc/libdriver.a
+
+arm-none-eabi-objcopy -Obinary blinky.axf blinky.bin
+
+

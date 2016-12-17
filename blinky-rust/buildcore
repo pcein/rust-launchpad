@@ -1,0 +1,3 @@
+rustc -C opt-level=2 -Z no-landing-pads --target thumbv7em-none-eabihf -g rust/src/libcore//lib.rs --out-dir libcore-thumbv7m
+rustc -C opt-level=2 -Z no-landing-pads --target thumbv7em-none-eabihf -g rust/src/librustc_bitflags/lib.rs   --out-dir librustc_bitflags-thumbv7m -L libcore-thumbv7m/
+

@@ -1,0 +1,7 @@
+rm *.axf *.bin *.o
+
+rm libcore-thumbv7m/libcore.rlib
+
+rm librustc_bitflags-thumbv7m/librustc_bitflags.rlib
+
+

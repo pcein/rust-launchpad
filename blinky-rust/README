@@ -1,0 +1,15 @@
+
+First step is to get the Rust source code from github
+and check out the version with commit-hash equal to the
+"nightly" compiler which we are using.
+
+Run the "getrustsrc" script to do this.
+
+Now, build the "core" library by running "buildcore".
+
+Finally, build the blinking LED application by compiling
+"blinky.rs" and linking it with a few other object files.
+
+You can do this by running "build".
+
+
